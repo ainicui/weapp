@@ -1,0 +1,59 @@
+{
+    "pages": [
+        "pages/home",
+        "pages/orderSuccess",
+        "pages/addInfo",
+        "pages/doctorDetail",
+        "pages/doctorOrder",
+        "pages/doorDetail",
+        "pages/agreement/index",
+        "pages/about/index",
+        "pages/door",
+        "pages/my",
+        "pages/order",
+        "pages/orderDetail",
+        "pages/recordDetail",
+        "pages/myWallet",
+        "pages/feedback",
+        "pages/login"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "地新门诊",
+        "navigationBarBackgroundColor": "#28B9D1",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "custom": false,
+        "color": "#666",
+        "selectedColor": "#28B9D1",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/home",
+                "text": "首页",
+                "iconPath": "assets/home-icon.png",
+                "selectedIconPath": "assets/selecte-home-icon.png"
+            },
+            {
+                "pagePath": "pages/door",
+                "text": "上门",
+                "iconPath": "assets/door-icon.png",
+                "selectedIconPath": "assets/selecte-door-icon.png"
+            },
+            {
+                "pagePath": "pages/order",
+                "text": "预约",
+                "iconPath": "assets/order-icon.png",
+                "selectedIconPath": "assets/selecte-order-icon.png"
+            },
+            {
+                "pagePath": "pages/my",
+                "text": "我的",
+                "iconPath": "assets/my-icon.png",
+                "selectedIconPath": "assets/selecte-my-icon.png"
+            }
+        ]
+    },
+    "usingComponents": {}
+}

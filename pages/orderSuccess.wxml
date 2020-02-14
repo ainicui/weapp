@@ -1,0 +1,14 @@
+
+<view class="order-success">
+  <view class="top">
+    <image src="../assets/success.png" mode="scaleToFill"></image>
+    <view class="text">
+      <text>预约成功！请提前30分钟到门诊部就诊，过期自动作废。</text>
+    </view>
+  </view>
+  <view class="info">
+    <van-cell bind_init="_initComponent" title="就诊方式" value="{{ successInfo.mode }}"></van-cell>
+    <van-cell bind_init="_initComponent" title="就诊时间" value="{{ successInfo.day }}"></van-cell>
+  </view>
+  <text class="text-detail">如需查看详情，返回个人中心“我的预约”查看</text>
+</view>

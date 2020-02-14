@@ -1,0 +1,1 @@
+page{background:#ffffff}.my-page{width:100%;text-align:center}.my-page .logo{width:212rpx;height:212rpx;margin:auto;margin-top:100rpx}.my-page text{font-size:36rpx;color:#333;margin-top:40rpx;display:block}.my-page text:last-of-type{font-size:32rpx;color:#777;margin-top:34rpx}.my-page button{width:93.3%;margin:auto;margin-top:76rpx;border-radius:16rpx}

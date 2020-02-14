@@ -1,0 +1,13 @@
+
+<view class="container">
+  <view class="banner">
+    <image src="../assets/v2_q3f290.png" mode="widthFix"></image>
+    <view class="address-text">
+      <text>地址：</text>
+      <text>{{ address }}</text>
+    </view>
+  </view>
+  <card-list bind_init="_initComponent" show="{{ NoData }}" style="width:100%;">
+    <card bind_init="_initComponent" wx:for="{{ list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" detail="{{ item }}" isHome></card>
+  </card-list>
+</view>

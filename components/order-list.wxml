@@ -1,0 +1,17 @@
+
+<view class="order-list">
+  <view wx:for="{{ list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" class="list">
+    <van-cell bind_init="_initComponent" center use-label-slot="{{ true }}" isLink value-class="cell-content" data-wpy-evt="54-0" bindtap="_proxy" data-wpytap-a="{{ item }}">
+      <view slot="title" class="info name">
+        <text>{{ item.group_info.name || item.group_info.title }}</text>
+        <text wx:if="{{ !isdoor }}" class="post-name">[{{item.group_info.title}}]</text>
+      </view>
+      <view slot="label" class="info info-time">
+        <text>{{ item.day_time }}</text>
+      </view>
+      <text wx:if="{{ item.status == 1 }}" style="color: #777; font-size: 32rpx;" class="money">未就诊</text>
+      <text wx:if="{{ item.status == 2 }}" style="color: #777; font-size: 32rpx;" class="money">已就诊</text>
+      <text wx:if="{{ item.status == 3 }}" style="color: #777; font-size: 32rpx;" class="money">已取消</text>
+    </van-cell>
+  </view>
+</view>

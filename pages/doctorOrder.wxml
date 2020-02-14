@@ -1,0 +1,54 @@
+<!----------   wxs start ----------->
+<wxs module="m1">
+"use strict";
+
+var dayTime = function dayTime(time) {
+  if (!time) return;
+  console.log('time', time);
+  var times = time.split(' ')[1].split(':');
+  times.pop();
+  return times.join(':');
+};
+
+module.exports.dayTime = dayTime;
+</wxs>
+<!----------   wxs end   ----------->
+
+<view class="doctor-detail">
+  <view class="card">
+    <card bind_init="_initComponent" detail="{{ info }}"></card>
+  </view>
+  <view class="order">
+    <view class="time">
+      <van-cell bind_init="_initComponent" center title="就诊时间" is-link value-class="time-value" data-wpy-evt="14-0" bindtap="_proxy">
+        <view>
+          第{{ timeContent.number }}号 {{ m1.dayTime(timeContent.day_time) }}
+        </view>
+      </van-cell>
+      <view class="tips">
+        <text>提示：请打开预约时段，选择具体就诊时间，预约挂号优先就诊。预约后请提前到门诊部等待就诊，过期自动作废。</text>
+      </view>
+    </view>
+    <van-cell bind_init="_initComponent" center title="{{ name }}" value-class="phone-value" value="{{ phone }}" is-link url="/pages/addInfo">
+      <image src="../assets/selecte-my-icon.png" mode="scaleToFill" slot="icon" class="resume-icon"></image>
+    </van-cell>
+    <view class="btn">
+      <van-button bind_init="_initComponent" color="{{ phone ? '#28B9D1' : '#C3C2C2' }}" data-wpy-evt="14-1" bindtap="_proxy">确认预约</van-button>
+    </view>
+  </view>
+  <van-popup bind_init="_initComponent" show="{{ show }}" custom-class="custom-popup" position="bottom" custom-style="height: 60%" data-wpy-evt="14-2" bindclose="_proxy">
+    <view class="popup-top">
+      <text>就诊时间</text>
+    </view>
+    <view class="popup-info">
+      <view wx:for="{{ time_list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" data-wpy-evt="14-3" bindtap="_proxy" data-wpytap-a="{{ index }}" class="list-info">
+        <text>第{{ item.number }}号 就诊时间：{{ m1.dayTime(item.day_time) }}</text>
+        <van-icon bind_init="_initComponent" name="success" color="#28BAD2" size="30" custom-class="select-icon" wx:if="{{ index === selcetindex }}"></van-icon>
+      </view>
+    </view>
+    <view class="popup-btn">
+      <van-button bind_init="_initComponent" color="#BEBFBF" data-wpy-evt="14-4" bindtap="_proxy">取消</van-button>
+      <van-button bind_init="_initComponent" color="#28BAD2" data-wpy-evt="14-5" bindtap="_proxy">确定</van-button>
+    </view>
+  </van-popup>
+</view>

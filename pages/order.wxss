@@ -1,0 +1,1 @@
+.door .van-tabs--card{padding:0;margin:0}.door .van-tabs__wrap{padding:30rpx}.door .van-tab__pane{margin-top:122rpx}.door .van-tabs__scroll--card{border-radius:8px;overflow:hidden;box-sizing:border-box}.door .van-tabs__scroll--card .van-tab{border:none}.door .van-cell .list--cell-content{flex:.4;-webkit-flex:.4}

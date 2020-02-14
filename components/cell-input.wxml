@@ -1,0 +1,11 @@
+
+<view class="cell-input">
+  <van-cell bind_init="_initComponent" is-link="{{ isLink }}" value="{{ value }}" clickable="{{ clickable }}" value-class="{{ valueClass }}">
+    <view slot="title" class="title">
+      <text>{{ title }}</text>
+      <text>*</text>
+    </view>
+    <image src="{{ rightIcon }}" wx:if="{{ rightIcon }}" slot="right-icon" data-wpy-evt="53-0" bindtap="_proxy" style="width: 50rpx; height: 50rpx;"></image>
+    <slot></slot>
+  </van-cell>
+</view>

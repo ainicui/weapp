@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "预约确认",
+    "component": true,
+    "usingComponents": {
+        "van-cell": "./../components/lib/cell/index",
+        "van-popup": "./../components/lib/popup/index",
+        "van-icon": "./../components/lib/icon/index",
+        "van-button": "./../components/lib/button/index",
+        "card": "./../components/card"
+    }
+}

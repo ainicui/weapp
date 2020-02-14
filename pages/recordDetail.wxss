@@ -1,0 +1,1 @@
+.door .list:last-child .van-cell:after{border-bottom:none}.door .cell-content{flex:.4}.door .info{font-size:36rpx;margin-top:26rpx;color:#333}.door .van-cell{font-size:36rpx;padding:35rpx 50rpx 35rpx 30rpx}.door .money{font-size:55rpx}.door .doctor{color:#EBC92D}.door .nurse{color:#28B9D1}

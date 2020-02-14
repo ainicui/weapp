@@ -1,0 +1,90 @@
+
+<view class="door-detail">
+  <image src="../assets/v2_q3knim.jpg" mode="widthFix" style="width: 100%;"></image>
+  <view class="detail-explain">
+    <view class="explain-money">
+      <text>￥30</text>
+      <text data-wpy-evt="15-0" bindtap="_proxy">费用说明?</text>
+    </view>
+    <text class="explain-title">普通换药</text>
+    <text class="explain-content">服务内容：清理伤口，清除异物，分泌物和坏死组织，减少细菌繁殖，控制，促进伤口愈合。</text>
+  </view>
+  <view class="order-from">
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <cell-input bind_init="_initComponent" title="咨询电话" valueClass="tel-color" value="15225190605" rightIcon="../assets/tel.png" data-wpy-evt="15-1" bindto-tel="_proxy"></cell-input>
+      <cell-input bind_init="_initComponent" title="手机号">
+        <input value="{{ phone }}" bindinput="_proxy" data-model-id="4" placeholder-class="place-style" placeholder="请输入手机号" type="text">
+      </input></cell-input>
+      <cell-input bind_init="_initComponent" title="上门日期" isLink>
+        <picker mode="date" value="{{ day_time }}" bindchange="_proxy" data-model-id="5" start="2020-01-01" end="2021-01-01">
+          <input value="{{ day_time }}" bindinput="_proxy" data-model-id="6" placeholder-class="place-style" placeholder="请选择上门日期" disabled type="text">
+        </input></picker>
+      </cell-input>
+      <cell-input bind_init="_initComponent" title="上门时间" isLink>
+        <picker mode="time" value="{{ day_times }}" bindchange="_proxy" data-model-id="7" start="09:01" end="21:01">
+          <input value="{{ day_times }}" bindinput="_proxy" data-model-id="8" placeholder-class="place-style" placeholder="请选择上门时间" disabled type="text">
+        </input></picker>
+      </cell-input>
+      <cell-input bind_init="_initComponent" title="上门地址" isLink>
+        <picker mode="region" value="{{ addresVal }}" bindchange="_proxy" data-model-id="9">
+          <input value="{{ addres }}" bindinput="_proxy" data-model-id="10" placeholder-class="place-style" placeholder="请选择上门地址" disabled type="text">
+        </input></picker>
+      </cell-input>
+      <cell-input bind_init="_initComponent" title="详细地址">
+        <input value="{{ address }}" bindinput="_proxy" data-model-id="11" placeholder-class="place-style" placeholder="请输入详细地址" type="text">
+      </input></cell-input>
+    </van-cell-group>
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <cell-input bind_init="_initComponent" title="就诊人姓名">
+        <input value="{{ name }}" bindinput="_proxy" data-model-id="12" placeholder-class="place-style" placeholder="请输入姓名" type="text">
+      </input></cell-input>
+      <cell-input bind_init="_initComponent" title="就诊人性别">
+        <radio-group bindchange="_proxy" data-model-id="13" data-wpy-evt="15-2" class="radio-group">
+          <radio value="男" color="#28B9D1"></radio>
+          <text>男</text>
+          <radio value="女" color="#28B9D1"></radio>
+          <text>女</text>
+        </radio-group>
+      </cell-input>
+      <cell-input bind_init="_initComponent" title="就诊人年龄">
+        <input value="{{ age }}" bindinput="_proxy" data-model-id="14" placeholder-class="place-style" placeholder="请输入年龄" type="text">
+      </input></cell-input>
+      <van-cell bind_init="_initComponent" title="就诊人身体状况" custom-class="report">
+        <textarea value="{{ near }}" bindinput="_proxy" data-model-id="15" placeholder-class="place-style" placeholder="请输入就诊人身体状况"></textarea>
+      </van-cell>
+      <van-cell bind_init="_initComponent" title="简单描述就诊人病史" custom-class="report">
+        <textarea value="{{ nears }}" bindinput="_proxy" data-model-id="16" placeholder-class="place-style" placeholder="请简述患者发病经过(现病史、既往史等)"></textarea>
+      </van-cell>
+      <van-cell bind_init="_initComponent" title="就诊人病史或检查报告附件" custom-class="report">
+        <view class="update-img">
+          <image wx:for="{{ imgList }}" wx:for-index="index" wx:for-item="src" wx:key="index" key="{{ index }}" src="{{ src }}" mode="aspectFill" class="report-img"></image>
+          <view data-wpy-evt="15-3" bindtap="_proxy" class="add-img">
+            <view class="img">
+              <image src="../assets/add-img.png" mode="scaleToFill"></image>
+              <text>上传图片</text>
+            </view>
+          </view>
+        </view>
+      </van-cell>
+      <van-cell bind_init="_initComponent" title="备注" custom-class="note">
+        <input value="{{ remark }}" bindinput="_proxy" data-model-id="17" placeholder-class="place-style" placeholder="如有特殊情况，请务必填写" type="text">
+      </input></van-cell>
+    </van-cell-group>
+    <view class="bottom">
+      <view class="prompt">
+        <text>温馨提示：</text>
+        <text style="color: #FF0000;">*</text>
+        <text>为必填内容</text>
+      </view>
+      <view class="protocol">
+        <van-checkbox bind_init="_initComponent" value="{{ checked }}" checked-color="#28B9D1" data-wpy-evt="15-4" bindtap="_proxy">
+        </van-checkbox>
+        <text>阅读并同意</text>
+        <navigator url="/pages/agreement/index">《某某诊所上门服务协议》</navigator>
+      </view>
+    </view>
+  </view>
+  <view class="order-btn">
+    <van-button bind_init="_initComponent" color="#28B9D1" data-wpy-evt="15-5" bindtap="_proxy">确认预约</van-button>
+  </view>
+</view>

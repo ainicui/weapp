@@ -1,0 +1,32 @@
+
+<view class="my-page">
+  <view class="banner">
+    <image src="../assets/my-bg.png" mode="widthFix" class="bg"></image>
+    <view class="my-info">
+      <image src="{{ userInfo.avatar }}" mode="widthFix" class="head-img"></image>
+      <text class="name">{{ userInfo.name }}</text>
+    </view>
+  </view>
+  <view class="my-cell">
+    <van-cell bind_init="_initComponent" center is-link url="/pages/myWallet">
+      <image slot="icon" src="../assets/qianbao.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">我的钱包</text>
+    </van-cell>
+    <van-cell bind_init="_initComponent" center is-link url="/pages/about/index">
+      <image slot="icon" src="../assets/about.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">关于我们</text>
+    </van-cell>
+    <van-cell bind_init="_initComponent" center is-link url="/pages/feedback">
+      <image slot="icon" src="../assets/yijian.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">建议反馈</text>
+    </van-cell>
+    <van-cell bind_init="_initComponent" center is-link>
+      <image slot="icon" src="../assets/xieyi.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">用户协议</text>
+    </van-cell>
+    <van-cell bind_init="_initComponent" center border="{{ false }}" value="{{ tel }}" value-class="tel-text">
+      <image slot="icon" src="../assets/tel-icon.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">客服电话</text>
+    </van-cell>
+  </view>
+</view>

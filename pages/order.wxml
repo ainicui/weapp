@@ -1,0 +1,15 @@
+
+<view class="door">
+  <van-tabs bind_init="_initComponent" type="card" color="#28B9D1" sticky="{{ true }}" data-wpy-evt="18-0" bindonChange="_proxy">
+    <van-tab bind_init="_initComponent" title="到店就诊">
+      <card-list bind_init="_initComponent" show="{{ NoData }}" style="width:100%;">
+        <order-list bind_init="_initComponent" list="{{ list }}" data-wpy-evt="18-1" bindgetRoute="_proxy"></order-list>
+      </card-list>
+    </van-tab>
+    <van-tab bind_init="_initComponent" title="上门服务">
+      <card-list bind_init="_initComponent" show="{{ NoData }}" style="width:100%;">
+        <order-list bind_init="_initComponent" list="{{ doorList }}" isdoor data-wpy-evt="18-2" bindgetRoute="_proxy"></order-list>
+      </card-list>
+    </van-tab>
+  </van-tabs>
+</view>

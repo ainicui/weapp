@@ -1,0 +1,17 @@
+
+<view class="my-wallet">
+  <view class="wallet-bg">
+    <text>钱包余额(元)</text>
+    <text>{{ money }}</text>
+  </view>
+  <view class="my-cell">
+    <van-cell bind_init="_initComponent" center is-link>
+      <image slot="icon" src="../assets/wallet-icon.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">保证金缴纳/退回</text>
+    </van-cell>
+    <van-cell bind_init="_initComponent" center border="{{ false }}" is-link url="/pages/recordDetail">
+      <image slot="icon" src="../assets/record-icon.png" mode="scaleToFill"></image>
+      <text slot="title" class="cell-title">交易记录</text>
+    </van-cell>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "医生详情",
+    "component": true,
+    "usingComponents": {
+        "van-cell": "./../components/lib/cell/index",
+        "van-collapse": "./../components/lib/collapse/index",
+        "van-popup": "./../components/lib/popup/index",
+        "van-collapse-item": "./../components/lib/collapse-item/index",
+        "van-button": "./../components/lib/button/index",
+        "card": "./../components/card"
+    }
+}

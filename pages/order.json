@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "我的预约",
+    "component": true,
+    "usingComponents": {
+        "van-tab": "./../components/lib/tab/index",
+        "van-tabs": "./../components/lib/tabs/index",
+        "card-list": "./../components/card-list",
+        "order-list": "./../components/order-list"
+    }
+}

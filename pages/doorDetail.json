@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "van-cell": "./../components/lib/cell/index",
+        "van-cell-group": "./../components/lib/cell-group/index",
+        "van-checkbox": "./../components/lib/checkbox/index",
+        "van-button": "./../components/lib/button/index",
+        "cell-input": "./../components/cell-input"
+    }
+}

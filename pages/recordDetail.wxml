@@ -1,0 +1,14 @@
+
+<view class="door">
+  <view wx:for="{{ list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" class="list">
+    <van-cell bind_init="_initComponent" center use-label-slot="{{ true }}" value-class="cell-content">
+      <text slot="title">{{ item.time }}</text>
+      <view slot="label" class="info">
+        <text wx:if="{{ !item.state }}">护士上门：</text>
+        <text wx:if="{{ item.state }}">到店就诊：</text>
+        <text>{{ item.name }}</text>
+      </view>
+      <text class="money {{ [ item.state ? 'doctor' : '',!item.state ? 'nurse' : '' ] }}">{{ item.money }}</text>
+    </van-cell>
+  </view>
+</view>

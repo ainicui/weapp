@@ -1,0 +1,7 @@
+
+<view class="my-page">
+  <image src="../assets/logo.png" mode="widthFix" class="logo"></image>
+  <text>申请获取以下权限</text>
+  <text>获取你的基本信息</text>
+  <van-button bind_init="_initComponent" open-type="getUserInfo" color="#28B9D1" data-wpy-evt="23-0" bindgetuserinfo="_proxy">授权登录</van-button>
+</view>

@@ -1,0 +1,7 @@
+
+<view class="feedback">
+  <textarea value="{{ content }}" bindinput="_proxy" data-model-id="3" placeholder="请输入您要反馈的内容" placeholder-style="color: #666666"></textarea>
+  <view class="order-btn">
+    <van-button bind_init="_initComponent" color="#28BAD2" data-wpy-evt="22-0" bindtap="_proxy">提 交</van-button>
+  </view>
+</view>

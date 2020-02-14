@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#28B9D1",
+    "component": true,
+    "usingComponents": {
+        "card": "./../components/card",
+        "card-list": "./../components/card-list"
+    }
+}

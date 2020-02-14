@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "添加信息",
+    "component": true,
+    "usingComponents": {
+        "van-cell": "./../components/lib/cell/index",
+        "van-cell-group": "./../components/lib/cell-group/index",
+        "van-button": "./../components/lib/button/index"
+    }
+}

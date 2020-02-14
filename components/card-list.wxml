@@ -1,0 +1,11 @@
+
+<view class="list">
+  <slot></slot>
+  <view wx:if="{{ show }}" class="bottom-loading">
+    <view class="loading">
+      <van-loading bind_init="_initComponent" size="25px" color="#28B9D1"></van-loading>
+      <text>加载中...</text>
+    </view>
+    
+  </view>
+</view>

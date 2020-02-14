@@ -1,0 +1,52 @@
+
+<view class="order-detail">
+  <view wx:if="{{ isOrder }}" class="order">
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="就诊时间" value="01-02/星期一 上午08:20" value-class="cell-content"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊方式" value="到店就诊"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊状态" border="{{ false }}">
+        <text wx:if="{{ orderDetail.stu == 1 }}" style="color: #28B9D1;">未就诊</text>
+        <text wx:if="{{ orderDetail.stu == 2 }}" style="color: #28B9D1;">已就诊</text>
+        <text wx:if="{{ orderDetail.stu == 3 }}" style="color: #28B9D1;">已取消</text>
+      </van-cell>
+    </van-cell-group>
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="医生姓名" value="{{ orderDetail.group_info.name }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="医生职称" value="{{ orderDetail.group_info.title }}" border="{{ false }}"></van-cell>
+    </van-cell-group>
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="就诊人姓名" value="{{ orderDetail.user.name }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊预约号码" value="{{ '第'+ orderDetail.number + '号' }}" border="{{ false }}"></van-cell>
+    </van-cell-group>
+  </view>
+  <view wx:else class="door">
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="就诊时间" value="01-02/星期一 上午08:20" value-class="cell-content"></van-cell>
+      <van-cell bind_init="_initComponent" title="预约服务" value="{{ orderDetail.group_info.title }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊方式" value="上门服务"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊状态" border="{{ false }}">
+        <text wx:if="{{ orderDetail.status == 1 }}" style="color: #28B9D1;">未就诊</text>
+        <text wx:if="{{ orderDetail.status == 2 }}" style="color: #28B9D1;">已就诊</text>
+        <text wx:if="{{ orderDetail.status == 3 }}" style="color: #28B9D1;">已取消</text>
+      </van-cell>
+    </van-cell-group>
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="手机号" value="{{ orderDetail.phone }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="上门地址" value="{{ orderDetail.addres }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="详细地址" value="{{ orderDetail.address }}" border="{{ false }}"></van-cell>
+    </van-cell-group>
+    <van-cell-group bind_init="_initComponent" border="{{ false }}">
+      <van-cell bind_init="_initComponent" title="就诊人姓名" value="{{ orderDetail.name }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊人性别" value="{{ orderDetail.sex }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊人年龄" value="{{ orderDetail.age }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊人身体状态" value="{{ orderDetail.near }}"></van-cell>
+      <van-cell bind_init="_initComponent" title="就诊人病史或检查报告附件" custom-class="report">
+        <image src="{{ 'http://zensuo.winderinfo.com/'+ orderDetail.enclosure }}" mode="scaleToFill" class="report-img"></image>
+      </van-cell>
+      <van-cell bind_init="_initComponent" title="备注" value="{{ orderDetail.remark }}" border="{{ false }}"></van-cell>
+    </van-cell-group>
+  </view>
+  <view class="order-btn">
+    <button color="#DDDDDD" data-wpy-evt="19-0" bindtap="_proxy">取消预约</button>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+
+<view class="door">
+  <van-tabs bind_init="_initComponent" type="card" color="#28B9D1" sticky="{{ true }}" data-wpy-evt="16-0" binddisabled="_proxy">
+    <van-tab bind_init="_initComponent" title="护士上门">
+      <card-list bind_init="_initComponent" show="{{ NoData }}" style="width:100%;">
+        <view wx:for="{{ list }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" data-wpy-evt="16-1" bindtap="_proxy" data-wpytap-a="{{ item }}" class="list">
+          <image src="{{ item.title_image }}" mode="widthFix" class="head-img"></image>
+          <view class="list-info">
+            <view class="info name">
+              <text>{{ item.title }}</text>
+            </view>
+            <view class="info field">
+              <text>{{ item.content }}}</text>
+            </view>
+            <view class="info info-money">
+              <text>￥{{ item.money }}</text>
+              <text>￥{{ item.moneys }}</text>
+            </view>
+          </view>
+        </view>
+      </card-list>
+    </van-tab>
+    <van-tab bind_init="_initComponent" title="医生上门" disabled></van-tab>
+  </van-tabs>
+</view>

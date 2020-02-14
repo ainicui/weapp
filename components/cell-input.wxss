@@ -1,0 +1,1 @@
+.cell-input .title text{vertical-align:top}.cell-input .title text:last-child{color:#FF0000;padding-left:4rpx}

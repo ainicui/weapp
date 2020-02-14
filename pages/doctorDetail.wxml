@@ -1,0 +1,62 @@
+<!----------   wxs start ----------->
+<wxs module="m1">
+"use strict";
+
+var getWeek = function getWeek(week) {
+  console.log(week);
+  if (week == 0) return '星期日';
+  if (week == 1) return '星期一';
+  if (week == 2) return '星期二';
+  if (week == 3) return '星期三';
+  if (week == 4) return '星期四';
+  if (week == 5) return '星期五';
+  if (week == 6) return '星期六';
+};
+
+module.exports.getWeek = getWeek;
+</wxs>
+<!----------   wxs end   ----------->
+
+<view class="doctor-detail">
+  <view class="card">
+    <card bind_init="_initComponent" detail="{{ info }}"></card>
+  </view>
+  <view class="door">
+    <van-collapse bind_init="_initComponent" value="{{ activeNames }}" data-wpy-evt="13-0" bindchange="_proxy">
+      <van-collapse-item bind_init="_initComponent" title="简介" name="1">
+        <view class="resume">
+          <text>{{ info.resume }}</text>
+        </view>
+        <image src="../assets/icon-text.png" mode="scaleToFill" slot="icon" class="resume-icon"></image>
+      </van-collapse-item>
+    </van-collapse>
+    <view class="schedule">
+      <van-cell bind_init="_initComponent" center title="排班表">
+        <image src="../assets/selecte-order-icon.png" mode="scaleToFill" slot="icon" class="resume-icon"></image>
+      </van-cell>
+      <view class="schedule-day">
+        <view wx:if="{{ info.comments.length }}" wx:for="{{ info.comments }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" data-wpy-evt="13-1" bindtap="_proxy" data-wpytap-a="{{ item }}" data-wpytap-b="{{ index }}" class="day {{ [ index === selcetindex ? 'select-day' : '' ] }}">
+          <text>{{ item.md }}</text>
+          <text>{{ m1.getWeek(item.week) }}</text>
+        </view>
+        <view wx:if="{{ !info.comments.length }}">暂无排班表</view>
+      </view>
+    </view>
+    <view wx:if="{{ info.comments.length }}" class="row-num">
+      <van-cell bind_init="_initComponent" center title="上午" is-link data-wpy-evt="13-2" bindtap="_proxy">
+        <view style=" {{ 'background:' + (!morning ? \'#C3C2C2\' : \'#28BAD2\') + ';' }}" class="yu-hao">
+          <text>余号：</text>
+          <text>{{ morning }}</text>
+        </view>
+        <image src="../assets/yue.png" mode="scaleToFill" slot="icon" class="resume-icon"></image>
+      </van-cell>
+      <van-cell bind_init="_initComponent" center title="下午" is-link data-wpy-evt="13-3" bindtap="_proxy">
+        <view style=" {{ 'background:' + (!Afternoon ? \'#C3C2C2\' : \'#28BAD2\') + ';' }}" class="yu-hao">
+          <text>余号：</text>
+          <text>{{ Afternoon }}</text>
+        </view>
+        <image src="../assets/yue.png" mode="scaleToFill" slot="icon" class="resume-icon"></image>
+      </van-cell>
+    </view>
+  </view>
+</view>

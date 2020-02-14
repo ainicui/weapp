@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "地新门诊",
+    "component": true,
+    "usingComponents": {
+        "van-tab": "./../components/lib/tab/index",
+        "van-tabs": "./../components/lib/tabs/index",
+        "card-list": "./../components/card-list"
+    }
+}
